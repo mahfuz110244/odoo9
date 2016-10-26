@@ -1,0 +1,149 @@
+<openerp>
+    <data>
+        <!-- add additional field in tree view for crm.lead model -->
+        <record model="ir.ui.view" id="crm_lead_tree_view">
+            <field name="name">booktrip tree view</field>
+            <field name="model">crm.lead</field>
+            <field name="inherit_id" ref="crm.crm_case_tree_view_leads"/>
+            <field name="arch" type="xml">
+
+                <field name="name" position="replace">
+                    <field name="name" invisible="1"/>
+                </field>
+                <field name="country_id" position="replace">
+                    <field name="country_id" invisible="1"/>
+                </field>
+
+                <field name="create_date" position="after">
+                    <field name="travel_from"/>
+                    <field name="travel_to"/>
+                    <field name="trip_status"/>
+                    <field name="bus_availability"/>
+                    <field name="travel_date"/>
+                    <field name="travel_time"/>
+                    <field name="return_date"/>
+                    <field name="return_time"/>
+                </field>
+
+                <field name="phone" position="after">
+                    <field name="no_of_passengers"/>
+                    <field name="catering"/>
+                </field>
+            </field>
+        </record>
+
+        <!-- add additional field in form view for crm.lead model -->
+        <record model="ir.ui.view" id="crm_lead_form_view">
+            <field name="name">booktrip form view</field>
+            <field name="model">crm.lead</field>
+            <field name="inherit_id" ref="crm.crm_case_form_view_leads"/>
+            <field name="arch" type="xml">
+
+                <field name="name" position="replace">
+                    <field name="name" invisible="1"/>
+                </field>
+                <field name="partner_id" position="replace">
+                    <field name="partner_id" invisible="1"/>
+                </field>
+                <field name="partner_name" position="replace">
+                    <field name="partner_name" invisible="1"/>
+                </field>
+                <field name="street" position="replace">
+                    <field name="street" invisible="1"/>
+                </field>
+                <field name="street2" position="replace">
+                    <field name="street2" invisible="1"/>
+                </field>
+                <field name="city" position="replace">
+                    <field name="city" invisible="1"/>
+                </field>
+                <field name="zip" position="replace">
+                    <field name="zip" invisible="1"/>
+                </field>
+                <field name="country_id" position="replace">
+                    <field name="country_id" invisible="1"/>
+                </field>
+                <field name="fax" position="replace">
+                    <field name="fax" invisible="1"/>
+                </field>
+                <field name="mobile" position="replace">
+                    <field name="mobile" invisible="1"/>
+                </field>
+                <field name="state_id" position="replace">
+                    <field name="state_id" invisible="1"/>
+                </field>
+                <field name="title" position="replace">
+                    <field name="title" invisible="1"/>
+                </field>
+                <field name="function" position="replace">
+                    <field name="function" invisible="1"/>
+                </field>
+
+                <field name="partner_name" position="after">
+                    <field name="travel_from"/>
+                    <field name="travel_to"/>
+                    <field name="trip_status"/>
+                    <field name="bus_availability"/>
+                    <field name="travel_date"/>
+                    <field name="travel_time"/>
+                    <field name="return_date"/>
+                    <field name="return_time"/>
+                </field>
+
+                <field name="phone" position="after">
+                    <field name="no_of_passengers"/>
+                    <field name="catering"/>
+                </field>
+            </field>
+        </record>
+
+        <!--<record id="website2_menu_booknow" model="website.menu">-->
+        <!--<field name="name">Book Now</field>-->
+        <!--<field name="url">/page/website.booknow</field>-->
+        <!--<field name="parent_id" ref="website.website2_main_menu"/>-->
+        <!--<field name="sequence" type="int">61</field>-->
+        <!--<field name="website_id" ref="website2"/>-->
+        <!--</record>-->
+
+        <!-- actions opening views on models -->
+        <!--
+        <record model="ir.actions.act_window" id="booktrip.action_window">
+          <field name="name">booktrip window</field>
+          <field name="res_model">booktrip.booktrip</field>
+          <field name="view_mode">tree,form</field>
+        </record>
+        -->
+
+        <!-- server action to the one above -->
+        <!--
+        <record model="ir.actions.server" id="booktrip.action_server">
+          <field name="name">booktrip server</field>
+          <field name="model_id" ref="model_booktrip_booktrip"/>
+          <field name="code">
+            action = {
+              "type": "ir.actions.act_window",
+              "view_mode": "tree,form",
+              "res_model": self._name,
+            }
+          </field>
+        </record>
+        -->
+
+        <!-- Top menu item -->
+        <!--
+        <menuitem name="booktrip" id="booktrip.menu_root"/>
+        -->
+        <!-- menu categories -->
+        <!--
+        <menuitem name="Menu 1" id="booktrip.menu_1" parent="booktrip.menu_root"/>
+        <menuitem name="Menu 2" id="booktrip.menu_2" parent="booktrip.menu_root"/>
+        -->
+        <!-- actions -->
+        <!--
+        <menuitem name="List" id="booktrip.menu_1_list" parent="booktrip.menu_1"
+                  action="booktrip.action_window"/>
+        <menuitem name="Server to list" id="booktrip" parent="booktrip.menu_2"
+                  action="booktrip.action_server"/>
+        -->
+    </data>
+</openerp>
