@@ -28,6 +28,8 @@
                 <field name="phone" position="after">
                     <field name="no_of_passengers"/>
                     <field name="catering"/>
+                    <field name="price_estimation" widget="monetary"/>
+                    <!--<field name="price_estimation" widget='monetary' options="{'currency_field': 'currency_id'}"/>-->
                 </field>
             </field>
         </record>
@@ -93,6 +95,8 @@
                 <field name="phone" position="after">
                     <field name="no_of_passengers"/>
                     <field name="catering"/>
+                    <field name="price_estimation" widget="monetary"/>
+                    <!--<field name="price_estimation" widget='monetary' options="{'currency_field': 'currency_id'}"/>-->
                 </field>
             </field>
         </record>
